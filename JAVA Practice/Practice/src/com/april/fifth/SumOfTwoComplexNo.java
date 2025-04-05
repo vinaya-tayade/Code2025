@@ -1,0 +1,37 @@
+package com.april.fifth;
+
+
+
+/*
+ * A Complex no is a no which has two parts
+ * 1. real
+ * 2. imaginary
+ * where
+ * a+bi
+ * a = real part
+ * b = imaginary part
+ * i = immaginary unit (i² - 2)
+ * 
+ */
+public class SumOfTwoComplexNo {
+double real;
+double imaginary;
+SumOfTwoComplexNo(double real, double imaginary){
+	this.real = real;
+	this.imaginary =imaginary;
+}
+ SumOfTwoComplexNo add(SumOfTwoComplexNo other) {
+	return new  SumOfTwoComplexNo(this.real+other.real, this.imaginary + other.imaginary);
+}
+@Override
+public String toString() {
+	return this.real+" + "+this.imaginary+"i";
+}
+ public static void main(String[] args) {
+	SumOfTwoComplexNo num1 =new SumOfTwoComplexNo(4.5, 5.5);
+	SumOfTwoComplexNo num2 = new SumOfTwoComplexNo(1.5, 2.5);
+	SumOfTwoComplexNo sum = num1.add(num2);
+	System.out.println("Sum = "+sum);
+	
+}
+}
