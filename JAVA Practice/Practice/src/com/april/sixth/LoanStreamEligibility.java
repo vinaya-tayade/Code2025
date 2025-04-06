@@ -1,0 +1,29 @@
+package com.april.sixth;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class LoanStreamEligibility {
+int age;
+double salary;
+String employmentStatus;
+
+	public LoanStreamEligibility(int age, double salary, String employmentStatus) {
+	super();
+	this.age = age;
+	this.salary = salary;
+	this.employmentStatus = employmentStatus;
+}
+public boolean isEligible() {
+	return age >= 21 && age <= 60 && salary >= 25000 && "permanent".equalsIgnoreCase(employmentStatus);
+}
+	public static void main(String[] args) {
+		List<LoanStreamEligibility> loanStreamEligibility = Arrays.asList(
+				new LoanStreamEligibility(30, 30000, "permanent"),
+				new LoanStreamEligibility(20, 20000, "temporary"),
+				new LoanStreamEligibility(45, 50000, "permanent"));
+		loanStreamEligibility.stream().filter(LoanStreamEligibility::isEligible).forEach(a -> System.out.println("Eligible: Age "+a.age+", Salary ₹ "+a.salary));
+
+	}
+
+}

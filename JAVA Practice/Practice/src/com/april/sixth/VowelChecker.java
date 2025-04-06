@@ -1,0 +1,24 @@
+package com.april.sixth;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class VowelChecker {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		char ch = scanner.next().charAt(0);
+		System.out.println(isVowel(ch));
+		
+
+	}
+
+	private static boolean isVowel(char ch) {
+		Set<Character> vowels =new HashSet<Character>(Arrays.asList('a','e','i','o','u','A','E','I','O','U'));
+		
+		return vowels.contains(Character.toLowerCase(ch));
+	}
+
+}
